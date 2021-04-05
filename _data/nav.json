@@ -1,0 +1,43 @@
+[
+
+  {
+
+    "title": "Home",
+    "url": "/"
+
+  },
+
+  {
+
+    "title": "Dropdown",
+    "url": "#",
+    "dropdown": [
+      { "title": "Option One", "url": "#" },
+      { "title": "Option Two", "url": "#" },
+      {
+        "title": "Submenu",
+        "url": "#",
+        "submenu": [
+          { "title": "Option A", "url": "#" },
+          { "title": "Option B", "url": "#" }
+        ]
+      }
+    ]
+
+  },
+
+  {
+
+    "title": "Generic",
+    "url": "/generic/"
+
+  },
+
+  {
+
+    "title": "Elements",
+    "url": "/elements/"
+
+  }
+
+]

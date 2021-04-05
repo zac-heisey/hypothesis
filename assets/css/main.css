@@ -3534,7 +3534,7 @@ input, select, textarea {
 				padding: 0 2rem;
 			}
 
-		#header + #main {
+		#header + #main > #banner {
 			margin-top: -3.25rem;
 		}
 

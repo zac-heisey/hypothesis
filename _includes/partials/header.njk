@@ -1,33 +1,37 @@
-<header id="header" class="alt">
+<header id="header" {% if page.url === '/' %}class="alt"{% endif %}>
 
   <!-- Logo -->
   <div class="logo">
-    <a href="index.html"><strong>Hypothesis</strong> <span class="extra">by Pixelarity</span></a>
+    <a href="/"><strong>Hypothesis</strong> <span class="extra">by Pixelarity</span></a>
   </div>
 
   <!-- Nav -->
   <nav id="nav">
+    <!-- Top Level -->
     <ul>
-      <li class="current"><a href="index.html">Home</a></li>
-      <li>
-        <a href="#" class="icon solid fa-angle-down">Dropdown</a>
+      {% for link in nav %}
+      <li {% if page.url === link.url %} class="current"{% endif %}>
+        <a href="{{ link.url }}">{{ link.title }}</a>
+        {% if link.dropdown.length > 0 %}
+        <!-- Second Level -->
         <ul>
-          <li><a href="#">Option One</a></li>
-          <li><a href="#">Option Two</a></li>
-          <li><a href="#">Option Three</a></li>
+          {% for link in link.dropdown %}
           <li>
-            <a href="#">Submenu</a>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+            {% if link.submenu.length > 0 %}
+            <!-- Third Level -->
             <ul>
-              <li><a href="#">Option One</a></li>
-              <li><a href="#">Option Two</a></li>
-              <li><a href="#">Option Three</a></li>
-              <li><a href="#">Option Four</a></li>
+              {% for link in link.submenu %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {% endfor %}
             </ul>
+            {% endif %}
           </li>
+          {% endfor %}
         </ul>
+        {% endif %}
       </li>
-      <li><a href="generic.html">Generic</a></li>
-      <li><a href="elements.html">Elements</a></li>
+      {% endfor %}
     </ul>
   </nav>
 
