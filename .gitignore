@@ -1,0 +1,18 @@
+## Ignore these files/directories from git version control
+## i.e. keep out of GitHub repo
+
+# Misc
+*.log
+npm-debug.*
+*.scssc
+*.log
+*.swp
+.DS_Store
+Thumbs.db
+.sass-cache
+.env
+.cache
+
+# Node modules and output
+node_modules
+_site
